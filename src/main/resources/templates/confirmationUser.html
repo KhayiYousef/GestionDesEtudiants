@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Confirmation</title>
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body>
+	<nav class="navbar navbar-expand-sm navbar-light bg-success">
+		<div class="collapse navbar-collapse" id="collapsibleNavId">
+			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+
+				<li class="nav-item"><a class="nav-link" th:href="@{/admin/saisie}">Etudiants</a>
+				</li>
+				<li class="nav-item"><a class="nav-link" th:href="@{/user/index}">Chercher</a>
+				</li>
+				<li class="nav-item"><a class="nav-link"
+					th:href="@{/admin/register}">Ajouter User</a></li>
+					<li class="nav-item"><a class="nav-link" th:href="@{/login?logout}">
+				[[${#httpServletRequest.remoteUser}]]
+				</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<div class="container mt-5">
+		<div class="row">
+			<div class="col-md-5 mx-auto">
+			 <h4>Confirmation</h4>
+				<div class="form-control">
+					<label> Login :</label> <label th:text="${users.login}"></label>
+				</div>
+				<div class="form-control">
+					<label> Password :</label> <label th:text="${users.pass}"></label>
+				</div>
+				<div class="form-control">
+					<label> Role :</label> <label th:text="${roles.role}"></label>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>
